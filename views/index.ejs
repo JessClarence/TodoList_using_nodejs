@@ -8,16 +8,25 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <h1>Today is <%=kindOfDay%>!</h1>
+    <div class="box" id="heading">
+        <h1>It's <%=kindOfDay%>!</h1>
+    </div>
+    <div class="box">
 
-    <ul>  
-        <% for(let i=0; i<=newItems.length; i++){ %>
-            <li><%=newItems[i] %></li>
-        <% } %>
-    </ul>
-    <form action="/" method="post">
-        <input type="text" name="items">
-        <button type="submit">Submit</button>
-    </form>
+        <ul>  
+            <% for(let i=0; i<=newItems.length; i++){ %>
+                <div class="item">
+                    <input type="checkbox">
+                    <p><%=newItems[i] %></p>
+                </div>
+            <% } %>
+        </ul>
+
+        <form action="/" method="post">
+            <input type="text" name="items" placeholder="Add Item" autocomplete="off">
+            <button type="submit">+</button>
+        </form>
+    </div>
+
 </body>
 </html>
